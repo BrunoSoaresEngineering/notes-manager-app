@@ -10,6 +10,7 @@ import { RawNote, NoteData } from './note';
 import { Tag } from './tag';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NoteLayout from './components/Note-layout';
 
 function App() {
   const [rawNotes, setRawNotes] = useLocalStorage<RawNote[]>('NOTES', []);
@@ -42,7 +43,7 @@ function App() {
             availableTags={tags}
           />
           }/>
-        <Route path=':id'>
+        <Route path=':id' element={<NoteLayout notes={notes}/>}>
           <Route index element={<h1>Show</h1>} />
           <Route path='edit' element={<h1>Edit</h1>} />
         </Route>

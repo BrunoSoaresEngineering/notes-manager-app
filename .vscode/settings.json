@@ -1,6 +1,7 @@
 {
   "conventionalCommits.scopes": [
     "new-note",
-    "list-notes"
+    "list-notes",
+    "note-detail"
   ]
 }

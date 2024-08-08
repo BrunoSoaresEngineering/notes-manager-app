@@ -11,10 +11,14 @@ export type RawNote = {
   title: string,
   markdown: string,
   tagIds: string[]
-}
+};
 
 export type SimplifiedNote = {
   id: string,
   title: string,
   tags: Tag[]
-}
+};
+
+export type Note = NoteData & ({
+  id: string
+});

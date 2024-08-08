@@ -19,5 +19,5 @@ const NoteLayout = ({ notes }: NoteLayoutProps) => {
 export default NoteLayout;
 
 export function useNote() {
-  return useOutletContext();
+  return useOutletContext<Note>();
 }

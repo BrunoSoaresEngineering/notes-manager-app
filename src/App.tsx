@@ -12,6 +12,7 @@ import { Tag } from './tag';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NoteLayout from './components/Note-layout';
 import Note from './pages/Note';
+import EditNote from './pages/Edit-note';
 
 function App() {
   const [rawNotes, setRawNotes] = useLocalStorage<RawNote[]>('NOTES', []);
@@ -27,6 +28,20 @@ function App() {
     setRawNotes((prevNotes) => {
       return [...prevNotes, {...data, id: uuidv4(), tagIds: tags.map((tag) => tag.id) }];
     });
+  }
+
+  function updateNote(id: string, {tags, ...data}: NoteData) {
+    setRawNotes((prevNotes) => prevNotes.map((prevNote) => {
+      if (prevNote.id !== id) {
+        return prevNote;
+      }
+
+      return {
+        id: id,
+        ...data,
+        tagIds: tags.map((tag) => tag.id)
+      }
+    }))
   }
 
   function createTag(tag: Tag) {
@@ -46,7 +61,13 @@ function App() {
           }/>
         <Route path=':id' element={<NoteLayout notes={notes}/>}>
           <Route index element={<Note />} />
-          <Route path='edit' element={<h1>Edit</h1>} />
+          <Route path='edit' element={
+            <EditNote
+              updateNote={updateNote}
+              createTag={createTag}
+              availableTags={tags}
+            />} 
+          />
         </Route>
         <Route path='*' element={<Navigate to='/'/>}/>
       </Routes>

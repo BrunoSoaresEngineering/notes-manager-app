@@ -11,12 +11,14 @@ type NoteFormProps = {
   onSubmit: (data: NoteData) => void,
   createTag: (tag: Tag) => void,
   availableTags: Tag[]
-}
+} & Partial<NoteData>;
 
 const NoteForm = ({
   onSubmit,
   createTag,
   availableTags,
+  title = '',
+  markdown = '',
   tags = []
 }: NoteFormProps) => {
   const titleRef = useRef<HTMLInputElement>(null);
@@ -43,7 +45,7 @@ const NoteForm = ({
           <Col>
             <Form.Group controlId='title'>
               <Form.Label>Title</Form.Label>
-              <Form.Control ref={titleRef} required />
+              <Form.Control ref={titleRef} required defaultValue={title}/>
             </Form.Group>
           </Col>
           <Col>
@@ -73,7 +75,7 @@ const NoteForm = ({
         </Row>
         <Form.Group controlId='markdown'>
           <Form.Label>Body</Form.Label>
-          <Form.Control required as='textarea' rows={20} ref={markdownRef}/>
+          <Form.Control required as='textarea' rows={20} ref={markdownRef} defaultValue={markdown}/>
         </Form.Group>
         <Stack direction='horizontal' gap={2} className='justify-content-end'>
           <Button type='submit' variant='primary'>Save</Button>

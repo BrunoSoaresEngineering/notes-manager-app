@@ -6,8 +6,8 @@ import { v4 as uuidv4 } from 'uuid';
 import NewNote from './New-note';
 import NoteList from './Note-list';
 import { useLocalStorage } from './useLocalStorage';
-import { RawNote, NoteData } from './note';
-import { Tag } from './tag';
+import { RawNote, NoteData } from './types/note';
+import { Tag } from './types/tag';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NoteLayout from './components/Note-layout';

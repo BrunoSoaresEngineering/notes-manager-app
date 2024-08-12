@@ -1,5 +1,5 @@
 import { Badge, Card, CardBody, Stack } from 'react-bootstrap';
-import { Tag } from '../../tag';
+import { Tag } from '../../types/tag';
 import { Link } from 'react-router-dom';
 
 import styles from './Note-card.module.css';

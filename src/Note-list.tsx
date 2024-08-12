@@ -3,8 +3,8 @@ import { Row, Col, Stack, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ReactSelect from 'react-select';
 
-import { Tag } from './tag';
-import { SimplifiedNote } from './note';
+import { Tag } from './types/tag';
+import { SimplifiedNote } from './types/note';
 import NoteCard from './components/note-card/Note-card';
 import EditTagsModal from './components/Edit-tags-modal';
 

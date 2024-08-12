@@ -1,7 +1,7 @@
 import { useNote } from '../components/Note-layout'
-import { NoteData } from '../note'
+import { NoteData } from '../types/note'
 import NoteForm from '../Note-form'
-import { Tag } from '../tag'
+import { Tag } from '../types/tag'
 
 type EditNoteProps = {
   updateNote: (id: string, note: NoteData) => void

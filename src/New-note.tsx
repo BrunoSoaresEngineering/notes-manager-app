@@ -1,6 +1,6 @@
 import NoteForm from './Note-form.tsx';
-import { NoteData } from './note.ts';
-import { Tag } from './tag.ts';
+import { NoteData } from './types/note.ts';
+import { Tag } from './types/tag.ts';
 
 type NewNoteProps = {
   createNote: (note: NoteData) => void,

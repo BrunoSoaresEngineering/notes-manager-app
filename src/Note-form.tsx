@@ -4,8 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import CreatableReactSelect from 'react-select/creatable';
 
-import { NoteData } from './note';
-import { Tag } from './tag';
+import { NoteData } from './types/note';
+import { Tag } from './types/tag';
 
 type NoteFormProps = {
   onSubmit: (data: NoteData) => void,

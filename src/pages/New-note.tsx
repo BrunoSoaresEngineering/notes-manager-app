@@ -1,4 +1,4 @@
-import NoteForm from '../Note-form.tsx';
+import NoteForm from '../components/Note-form.tsx';
 import { NoteData } from '../types/note.ts';
 import { Tag } from '../types/tag.ts';
 

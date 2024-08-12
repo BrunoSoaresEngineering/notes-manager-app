@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import NewNote from './pages/New-note';
 import NoteList from './pages/Note-list';
-import { useLocalStorage } from './useLocalStorage';
+import { useLocalStorage } from './hooks/useLocalStorage';
 import { RawNote, NoteData } from './types/note';
 import { Tag } from './types/tag';
 
